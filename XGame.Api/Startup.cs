@@ -1,16 +1,13 @@
 ﻿using Microsoft.AspNet.WebApi.Extensions.Compression.Server;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using Microsoft.Practices.Unity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Extensions.Compression.Core.Compressors;
-using System.Web;
 using System.Web.Http;
-using Unity;
 using XGame.Api.Security;
 using XGame.IoC.Unity;
 
@@ -23,7 +20,7 @@ namespace XGame.Api
             HttpConfiguration config = new HttpConfiguration();
 
             // Swagger
-            //SwaggerConfig.Register(config);
+            SwaggerConfig.Register(config);
 
             // Configure Dependency Injection
             var container = new UnityContainer();

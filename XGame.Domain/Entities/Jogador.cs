@@ -1,6 +1,5 @@
 ﻿using prmToolkit.NotificationPattern;
 using prmToolkit.NotificationPattern.Extensions;
-using System;
 using XGame.Domain.Entities.Base;
 using XGame.Domain.Enums;
 using XGame.Domain.Extensions;
@@ -50,8 +49,6 @@ namespace XGame.Domain.Entities
 
             AddNotifications(nome, email);
         }
-
-        public Guid Id { get; private set; }
 
         public Nome Nome { get; private set; }
 
