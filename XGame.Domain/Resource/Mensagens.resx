@@ -126,6 +126,9 @@
   <data name="NAO_E_POSSIVEL_ALTERAR_JOGADOR_SE_ELE_ESTIVER_ATIVO" xml:space="preserve">
     <value>Não é possível alterar jogador se ele estiver ativo.</value>
   </data>
+  <data name="OBJETO_X0_E_OBRIGATORIO" xml:space="preserve">
+    <value>Objeto {0} é obrigatório.</value>
+  </data>
   <data name="OPERACAO_REALIZADA_COM_SUCESSO" xml:space="preserve">
     <value>Operação realizada com sucesso.</value>
   </data>

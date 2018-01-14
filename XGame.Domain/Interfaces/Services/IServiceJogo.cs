@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using XGame.Domain.Arguments.Base;
 using XGame.Domain.Arguments.Jogo;
 using XGame.Domain.Interfaces.Services.Base;
 
@@ -11,8 +12,8 @@ namespace XGame.Domain.Interfaces.Services
 
         AdicionarJogoResponse Adicionar(AdicionarJogoRequest request);
 
-        AlterarJogoResponse Alterar(AlterarJogoRequest request);
+        ResponseBase Alterar(AlterarJogoRequest request);
 
-        ExcluirJogoResponse Excluir(Guid Id);
+        ResponseBase Excluir(Guid id);
     }
 }

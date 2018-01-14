@@ -88,6 +88,15 @@ namespace XGame.Domain.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Objeto {0} é obrigatório..
+        /// </summary>
+        public static string OBJETO_X0_E_OBRIGATORIO {
+            get {
+                return ResourceManager.GetString("OBJETO_X0_E_OBRIGATORIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Operação realizada com sucesso..
         /// </summary>
         public static string OPERACAO_REALIZADA_COM_SUCESSO {

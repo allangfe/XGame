@@ -1,10 +1,14 @@
 ﻿using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using XGame.Domain.Arguments.Base;
 using XGame.Domain.Arguments.Jogo;
 using XGame.Domain.Entities;
 using XGame.Domain.Interfaces.Repositories;
 using XGame.Domain.Interfaces.Services;
+using XGame.Domain.Resource;
 
 namespace XGame.Domain.Services
 {
@@ -19,6 +23,12 @@ namespace XGame.Domain.Services
 
         public AdicionarJogoResponse Adicionar(AdicionarJogoRequest request)
         {
+            if (request == null)
+            {
+                AddNotification("Adicionar", Mensagens.OBJETO_X0_E_OBRIGATORIO.ToFormat("AdicionarJogoRequest"));
+                return null;
+            } 
+
             var jogo = new Jogo(request.Nome, request.Descricao, request.Produtora, request.Distribuidora, request.Genero, request.Site);
 
             AddNotifications(jogo);
@@ -30,19 +40,49 @@ namespace XGame.Domain.Services
             return (AdicionarJogoResponse)jogo;
         }
 
-        public AlterarJogoResponse Alterar(AlterarJogoRequest request)
+        public ResponseBase Alterar(AlterarJogoRequest request)
         {
-            throw new NotImplementedException();
+            if (request == null)
+            {
+                AddNotification("Alterar", Mensagens.OBJETO_X0_E_OBRIGATORIO.ToFormat("AlterarJogoRequest"));
+                return null;
+            }
+
+            var jogo = _repositoryJogo.ObterPorId(request.Id);
+
+            if (jogo == null)
+            {
+                AddNotification("Id", Mensagens.DADOS_NAO_ENCONTRADOS);
+                return null;
+            }
+
+            jogo.Alterar(request.Nome, request.Descricao, request.Produtora, request.Distribuidora, request.Genero, request.Site);
+
+            if (IsInvalid()) return null;
+
+            _repositoryJogo.Editar(jogo);
+
+            return new  ResponseBase();
         }
 
-        public ExcluirJogoResponse Excluir(Guid Id)
+        public ResponseBase Excluir(Guid id)
         {
-            throw new NotImplementedException();
+            var jogo = _repositoryJogo.ObterPorId(id);
+
+            if (jogo == null)
+            {
+                AddNotification("Id", Mensagens.DADOS_NAO_ENCONTRADOS);
+                return null;
+            }
+
+            _repositoryJogo.Remover(jogo);
+
+            return new ResponseBase();
         }
 
         public IEnumerable<JogoResponse> Listar()
         {
-            throw new NotImplementedException();
+            return _repositoryJogo.Listar().ToList().Select(jogador => (JogoResponse)jogador).ToList();
         }
     }
 }

@@ -17,5 +17,19 @@ namespace XGame.Domain.Arguments.Jogo
         public string Genero { get; set; }
 
         public string Site { get; set; }
+
+        public static explicit operator JogoResponse(Entities.Jogo entidade)
+        {
+            return new JogoResponse
+            {
+                Id = entidade.Id,
+                Descricao = entidade.Descricao,
+                Distribuidora = entidade.Distribuidora,
+                Nome = entidade.Nome,
+                Genero = entidade.Genero,
+                Produtora = entidade.Produtora,
+                Site = entidade.Site
+            };
+        }
     }
 }

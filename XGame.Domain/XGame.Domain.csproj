@@ -109,8 +109,6 @@
     <Compile Include="Arguments\Jogo\AdicionarJogoRequest.cs" />
     <Compile Include="Arguments\Jogo\AdicionarJogoResponse.cs" />
     <Compile Include="Arguments\Jogo\AlterarJogoRequest.cs" />
-    <Compile Include="Arguments\Jogo\AlterarJogoResponse.cs" />
-    <Compile Include="Arguments\Jogo\ExcluirJogoResponse.cs" />
     <Compile Include="Arguments\Jogo\JogoResponse.cs" />
     <Compile Include="Arguments\Plataforma\AdicionarPlataformaRequest.cs" />
     <Compile Include="Arguments\Plataforma\AdicionarPlataformaResponse.cs" />
