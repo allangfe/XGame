@@ -17,11 +17,6 @@ namespace XGame.Domain.Services
     {
         private readonly IRepositoryJogador _repositoryJogador;
 
-        public ServiceJogador()
-        {
-
-        }
-
         public ServiceJogador(IRepositoryJogador repositoryJogador)
         {
             _repositoryJogador = repositoryJogador;

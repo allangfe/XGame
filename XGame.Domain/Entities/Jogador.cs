@@ -10,7 +10,7 @@ namespace XGame.Domain.Entities
 {
     public class Jogador : EntityBase
     {
-        public Jogador()
+        protected Jogador()
         {
 
         }

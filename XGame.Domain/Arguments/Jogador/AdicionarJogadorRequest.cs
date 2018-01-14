@@ -1,5 +1,4 @@
 ﻿using XGame.Domain.Interfaces.Arguments;
-using XGame.Domain.ValueObject;
 
 namespace XGame.Domain.Arguments.Jogador
 {
