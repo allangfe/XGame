@@ -70,6 +70,15 @@ namespace XGame.Domain.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Já existe um {0} chamado {1}..
+        /// </summary>
+        public static string JA_EXISTE_UM_X0_CHAMADO_X1 {
+            get {
+                return ResourceManager.GetString("JA_EXISTE_UM_X0_CHAMADO_X1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Não é possível alterar jogador se ele estiver ativo..
         /// </summary>
         public static string NAO_E_POSSIVEL_ALTERAR_JOGADOR_SE_ELE_ESTIVER_ATIVO {

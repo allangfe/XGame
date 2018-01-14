@@ -120,6 +120,9 @@
   <data name="DADOS_NAO_ENCONTRADOS" xml:space="preserve">
     <value>Dados não encontrado.</value>
   </data>
+  <data name="JA_EXISTE_UM_X0_CHAMADO_X1" xml:space="preserve">
+    <value>Já existe um {0} chamado {1}.</value>
+  </data>
   <data name="NAO_E_POSSIVEL_ALTERAR_JOGADOR_SE_ELE_ESTIVER_ATIVO" xml:space="preserve">
     <value>Não é possível alterar jogador se ele estiver ativo.</value>
   </data>

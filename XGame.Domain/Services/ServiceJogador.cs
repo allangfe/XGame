@@ -36,6 +36,11 @@ namespace XGame.Domain.Services
 
             AddNotifications(nome, email, jogador);
 
+            if (_repositoryJogador.Existe(x => x.Email.Endereco == request.Email))
+            {
+                AddNotification("Email", Mensagens.JA_EXISTE_UM_X0_CHAMADO_X1.ToFormat("e-mail", request.Email));
+            }
+
             if (IsInvalid()) return null;
 
             jogador = _repositoryJogador.Adicionar(jogador);
