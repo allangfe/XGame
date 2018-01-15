@@ -85,7 +85,7 @@ namespace XGame.Domain.Services
             if (jogador.IsInvalid())
                 return null;
 
-            jogador = _repositoryJogador.ObterPor(x => x.Email.Endereco == jogador.Email.Endereco, x => x.Senha == jogador.Senha);
+            jogador = _repositoryJogador.ObterPor(x => x.Email.Endereco == jogador.Email.Endereco && x.Senha == jogador.Senha);
 
             return (AutenticarJogadorResponse)jogador;
         }

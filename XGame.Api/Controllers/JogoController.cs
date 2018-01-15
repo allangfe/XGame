@@ -51,6 +51,7 @@ namespace XGame.Api.Controllers
             }
         }
 
+        [Authorize]
         [Route("Excluir")]
         [HttpDelete]
         public async Task<HttpResponseMessage> Excluir(Guid id)
